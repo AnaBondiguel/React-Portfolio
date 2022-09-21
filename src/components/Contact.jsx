@@ -2,17 +2,17 @@ import React, { useReducer } from "react";
 import reducer from "./utils/contactReducer";
 import MessageCard from "./MessageCard";
 import ColourChoicePanel from "./ColourChoicePanel";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
-    // let navigate = useNavigate();
+     let navigate = useNavigate();
 
   const initialState = {
     name: "",
     email: "",
     message: "",
     userMessage: "",
-    textColour: "#f0f8ff",
+    textColour: "#000000",
     cardColour: "#ffffff"
   }
 
@@ -66,7 +66,8 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
     } else if (!isNaN(parseInt(message))) {
         setUserMessage("Message must not be a number.");
     } else {
-        setUserMessage("You have been entered valid input!");
+        // setUserMessage("");
+        navigate("/thanks");
     }
 }
 
@@ -103,12 +104,8 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
             value={message}
             onChange={handleOnChange}
           ></textarea>
-          <button onClick={handleSubmit}>Submit</button>
         </form>
 
-        <p style={{ color: "red" }}>
-          <b>{userMessage}</b>
-        </p>
       </div>
 
       <div>
@@ -120,7 +117,11 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
           setTextColour={setTextColour}
           setCardColour={setCardColour}
         />
-      
+        <br></br>
+       <button onClick={handleSubmit}>Submit</button>
+       <p style={{ color: "red" }}>
+          <b>{userMessage}</b>
+       </p>
         
       </div>
     </section>

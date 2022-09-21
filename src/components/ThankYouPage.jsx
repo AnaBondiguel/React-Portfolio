@@ -1,11 +1,11 @@
 import React from "react";
 import MainFeaturedPost from "./MainFeaturedPost";
 
-const Home = () => {
+const ThankYouPage = () => {
     const mainFeaturedPost = {
-        title: "Hello! I'm Ana.",
-        description: "Welcome to my portfolio website!",
-        image:"https://images.pexels.com/photos/4411214/pexels-photo-4411214.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940g",
+        title: "Thank you!",
+        description: "Your post was awesome!",
+        image:"https://images.pexels.com/photos/4411214/pexels-photo-4411214.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         imageText: "main image description",
       };
     return(
@@ -15,4 +15,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default ThankYouPage;

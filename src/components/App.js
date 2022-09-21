@@ -4,7 +4,7 @@ import Experience from "./Experience";
 import Education from "./Education";
 import Skills from "./Skills";
 import Projects from "./Projects";
-import Header from "./Header";
+// import Header from "./Header";
 import Footer from "./Footer";
 import Awards from "./Awards";
 import Contact from "./Contact";
@@ -12,28 +12,31 @@ import {React, useState, useEffect} from 'react';
 import Container from '@mui/material/Container';
 import NavBar from "./NavBar";
 import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import NotFound from "./NotFound";
+import ThankYouPage from "./ThankYouPage";
 
 const sections = [
   {
-    title: "About", url:"#about"
+    title: "About", url:"about"
   },
   {
-    title: "Experience", url:"#experience"
+    title: "Experience", url:"experience"
   },
   {
-    title: "Education", url:"#education"
+    title: "Education", url:"education"
   },
   {
-    title: "Skills", url:"#skills"
+    title: "Skills", url:"skills"
   },
   {
-    title: "Projects", url:"#projects"
+    title: "Projects", url:"projects"
   },
   {
-    title: "Certifications and Awards", url:"#Awards"
+    title: "Certifications and Awards", url:"Awards"
   },
   {
-    title: "Contact", url:"#contact"
+    title: "Contact", url:"contact"
   },
 ]
   function LoadingPage() {
@@ -48,7 +51,7 @@ const sections = [
         </Container>
 
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="experience" element={<Experience />} />
           <Route path="education" element={<Education />} />
@@ -56,7 +59,8 @@ const sections = [
           <Route path="projects" element={<Projects />} />
           <Route path="awards" element={<Awards />} />
           <Route path="contact" element={<Contact />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="thanks" element={<ThankYouPage />} />
+          <Route path="*" element={<NotFound />} />
       </Routes>
 
           <Footer />
