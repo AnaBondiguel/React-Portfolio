@@ -40,7 +40,7 @@ const sections = [
   },
 ]
   function LoadingPage() {
-    return (<h1>Loading... 🔮</h1>);
+    return (<h1>Loading... 🐙 </h1>);
   }
   
   function MainPage() {

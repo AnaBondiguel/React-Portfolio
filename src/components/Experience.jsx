@@ -7,6 +7,7 @@ const Experience = () => {
     {title: 'Wang, M., Gibb, J., and Sinha, P. 2018', description: ' Entrepreneurial Decision-Making Styles: Developing a Dynamic Intuitive-Analytic Capability. Proceedings of the 78th Annual Conference of the Academy of Management: Making Decisions in Organizations, Chicago.'},
     {title: 'Wang, M., Gibb, J., and Sinha, P. 2017', description: ' Using Intuition and Rational Analysis to Inform Entrepreneurial Opportunity Recognition. Proceedings of the 77th Annual Conference of the Academy of Management, Intuition in Organizations: Integration of Intuition and Analysis, Atlanta.'},
     {title: 'Sinha, P., Wang, M., Scott-Kennel, J., and Gibb, J. 2015', description: ' Paradoxes of Psychic Distance and Market Entry by Software INVs. European Business Review 27, 34-59.'},
+    {title: 'Publication list', description: <a href="https://drive.google.com/file/d/1V-TusG9Vw1d6RoYOeI4AwjMd4XeYt5e9/view?usp=sharing"> My Publication PDF Document</a>},
 ]
 
 const teaching = [

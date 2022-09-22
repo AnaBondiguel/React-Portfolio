@@ -126,6 +126,7 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
       </div>
     </section>
   );
+
 }
 
 export default Contact;
