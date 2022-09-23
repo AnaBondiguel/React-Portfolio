@@ -1,4 +1,6 @@
 import React from "react";
+import Link from '@mui/material/Link';
+import Button from '@mui/material/Button';
 
 const About = () => (
   <section id="about">
@@ -10,8 +12,8 @@ const About = () => (
         I am a Junior Full-Stack Software Developer and love coding and have
         started on a learning journey that will last a lifetime. I learnt HTML,
         CSS, Ruby on Rails, React, and JavaScript and enjoyed solving problems
-        and building applications. I am also a Researcher in Entrepreneurship of
-        the software industry and published papers in academic books and
+        and building applications. I am also a Researcher (Ph.D) in Entrepreneurship of
+        the software industry and published articles in academic books and
         journals.
       </p>
       <h3>Personality</h3>
@@ -31,6 +33,9 @@ const About = () => (
         learning about new technologies, AIs, and aerospace.
       </p>
     </div>
+      <Button variant="contained" color="secondary">
+        <Link href="https://drive.google.com/file/d/1dlJwrbKtA_NK3VT-b3dYJl-Mn1Hqd_H5/view?usp=sharing" color="#FFFFFF">DOWNLOAD MY RESUME</Link>
+      </Button>
   </section>
 );
 

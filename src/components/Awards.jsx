@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid';
 const Awards = () => {
   const awards = [
     {
-      title: "Doctoral Merit Award",
-      description: " University of Waikato 2012",
+      title: "Doctoral Merit Award 2012",
+      description: " University of Waikato",
     },
     {
       title: "Membership of Golden Key International Honour Society 2012",
@@ -16,15 +16,22 @@ const Awards = () => {
   ];
   
   const certifications = [
-    { title: "AOM Membership", description: " Academy of Management 2017" },
+    { 
+      title: " HTML & CSS Certificates 2022", 
+      description: " Codeacademy", 
+    },
+    { 
+      title: "AOM Membership 2017", 
+      description: " Academy of Management ", 
+    },
     {
-      title: "ANZAM Membership",
-      description: " Australian & New Zealand Academy of Management 2015",
+      title: "ANZAM Membership 2015",
+      description: " Australian & New Zealand Academy of Management ",
     },
     {
       title:
-        "Provisional Associated Chartered Accountant Membership of New Zealand ",
-      description: " The New Zealand Institute of Chartered Accountants 2008",
+        "Provisional Associated Chartered Accountant Membership of New Zealand 2008",
+      description: " The New Zealand Institute of Chartered Accountants ",
     },
   ];
   return (

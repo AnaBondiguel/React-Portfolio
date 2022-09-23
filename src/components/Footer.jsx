@@ -15,7 +15,7 @@ const Footer = () => {
           {"© Created by Mingyang Wang "}
           {new Date().getFullYear()}
           {" All rights reserved."} 
-              <Link href="https://www.linkedin.com/in/ana-mingyang-wang-143313106/">
+              <Link href="https://www.linkedin.com/in/ana-mingyang-wang/">
                 <FontAwesomeIcon icon={faLinkedinIn} color="black" />
               </Link>
               <Link href="https://github.com/AnaBondiguel">
