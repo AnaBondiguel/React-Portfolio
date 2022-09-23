@@ -1,14 +1,15 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef } from "react";
 import reducer from "./utils/contactReducer";
 import MessageCard from "./MessageCard";
 import ColourChoicePanel from "./ColourChoicePanel";
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 
 function Contact() {
      let navigate = useNavigate();
 
   const initialState = {
-    name: "",
+    user_name: "",
     email: "",
     message: "",
     userMessage: "",
@@ -21,7 +22,8 @@ function Contact() {
 //   );
 
 const [store, dispatch] = useReducer(reducer, initialState);
-const {name, email, message, userMessage, textColour, cardColour} = store;
+const {user_name, email, message, userMessage, textColour, cardColour} = store;
+const formRef = useRef();
 
   function handleOnChange(event) {
     dispatch({
@@ -51,13 +53,22 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
     });
   }
 
+  async function sendEmail(formRef) {
+    return emailjs.sendForm(
+      'service_zgffhu1', 
+      'template_bgdzyru', 
+      formRef, 
+      'WoMqXxiHaJU2v4G_T'
+    );
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
 
     // console.log("type of message:", typeof this.state.message);
     // console.log("parse to a integer", parseInt(this.state.message));
 
-    if (name.length === 0) {
+    if (user_name.length === 0) {
         setUserMessage("Name must be provided!");
     } else if (email.length === 0) {
        setUserMessage("Email must be provided.");
@@ -67,10 +78,14 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
         setUserMessage("Message must not be a number.");
     } else {
         // setUserMessage("");
-        navigate("/thanks");
+        sendEmail(formRef.current).then(res => {
+          console.log(res);
+          navigate("/thanks");
+        });
     }
 }
-
+  // once the form is loaded to the DOM, it will update the formRef obj
+  // to { current: <form ... > }
   return (
     <section id="contact">
       <div>
@@ -78,12 +93,13 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
       </div>
       <br></br>
       <div>
-        <form>
+        <form ref={formRef}>
+          <input type="hidden" name="user_email" value="michaelyangyang@hotmail.com" />
           <label>Name: </label>
           <input
             type="text"
-            name="name"
-            value={name}
+            name="user_name"
+            value={user_name}
             onChange={handleOnChange}
           ></input>
           <br></br>
@@ -110,7 +126,7 @@ const {name, email, message, userMessage, textColour, cardColour} = store;
 
       <div>
         <h4>This is what you have entered:</h4>
-        <MessageCard name={name} email={email} message={message} textColour={textColour} cardColour={cardColour}/>
+        <MessageCard name={user_name} email={email} message={message} textColour={textColour} cardColour={cardColour}/>
         <ColourChoicePanel
           textColour={textColour}
           cardColour={cardColour}

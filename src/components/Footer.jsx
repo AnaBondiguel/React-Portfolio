@@ -15,11 +15,11 @@ const Footer = () => {
           {"© Created by Mingyang Wang "}
           {new Date().getFullYear()}
           {" All rights reserved."} 
-              <Link href="https://www.linkedin.com/in/ana-mingyang-wang/">
-                <FontAwesomeIcon icon={faLinkedinIn} color="black" />
+              <Link href="https://www.linkedin.com/in/ana-mingyang-wang/" sx={{ float: 'right', marginRight: 3 }}>
+                <FontAwesomeIcon icon={faLinkedinIn} color="black" size="lg" />
               </Link>
-              <Link href="https://github.com/AnaBondiguel">
-                <FontAwesomeIcon icon={ faGithub } color="black"/>
+              <Link href="https://github.com/AnaBondiguel"  sx={{ float: 'right', marginRight: 3}}>
+                <FontAwesomeIcon icon={ faGithub } color="black" size="lg" />
               </Link>
         </Typography>
        
