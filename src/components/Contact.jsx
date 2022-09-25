@@ -4,6 +4,7 @@ import MessageCard from "./MessageCard";
 import ColourChoicePanel from "./ColourChoicePanel";
 import { useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
+import Grid from '@mui/material/Grid';
 
 function Contact() {
      let navigate = useNavigate();
@@ -93,35 +94,47 @@ const formRef = useRef();
       </div>
       <br></br>
       <div>
+      <Grid container spacing={1} columns={16} >
         <form ref={formRef}>
           <input type="hidden" name="user_email" value="michaelyangyang@hotmail.com" />
-          <label>Name: </label>
-          <input
-            type="text"
-            name="user_name"
-            value={user_name}
-            onChange={handleOnChange}
-          ></input>
+          
+          <Grid item xs={8} >
+            <label>Name: </label>
+            <input
+              type="text"
+              name="user_name"
+              value={user_name}
+              onChange={handleOnChange}
+            ></input>
+          </Grid>
           <br></br>
-          <label>Email Address: </label>
-          <input
-            type="name"
-            name="email"
-            value={email}
-            onChange={handleOnChange}
-          ></input>
-          <br></br>
-          <label>Message: </label>
-          <textarea
-            type="textarea"
-            name="message"
-            rows="5"
-            cols="33"
-            value={message}
-            onChange={handleOnChange}
-          ></textarea>
-        </form>
 
+          <Grid item xs={8} >
+            <label>Email Address: </label>
+            <input
+              type="name"
+              name="email"
+              value={email}
+              onChange={handleOnChange}
+            ></input>
+            </Grid>
+          <br></br>
+
+          <Grid item xs={8} >
+          <label>Message: </label>
+            <textarea
+              type="textarea"
+              name="message"
+              rows="5"
+              cols="33"
+              value={message}
+              onChange={handleOnChange}
+            ></textarea>
+           </Grid>
+          
+        </form>
+        </Grid>
+       
       </div>
 
       <div>
