@@ -16,6 +16,7 @@ import Home from "./Home";
 import NotFound from "./NotFound";
 import ThankYouPage from "./ThankYouPage";
 
+
 const sections = [
   {
     title: "About", url:"about"

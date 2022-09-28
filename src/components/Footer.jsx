@@ -9,7 +9,7 @@ import Link from '@mui/material/Link';
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#fce4ec", py: 6 }}>
+    <Box sx={{ backgroundColor: "#fce4ec", py: 6}}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="left" color="black" gutterBottom>
           {"© Created by Mingyang Wang "}

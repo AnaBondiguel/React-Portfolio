@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import ListItem from "./ListItem";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
-    const initialProjects = [
-        "babyessentials",
-        "ruby-flowershop-app",
-        "React-Portfolio",
-        "My-Portfolio",
-    ]
+    // const initialProjects = [
+    //     "babyessentials",
+    //     "ruby-flowershop-app",
+    //     "React-Portfolio",
+    //     "My-Portfolio",
+    // ]
 
     const Projects = () => {
         let initialData = {
-          projects: initialProjects,
+          projects: [],
           userInput: "",
         };
 
@@ -27,10 +30,16 @@ import {Link} from "react-router-dom";
                     return result.json();
                   })
                   .then((data) => {
-                    const projectNames = data.map((project) => project.name);
+                    const projects = data // array
+                      .filter((project) => !project.private) // array
+                      .map((project) => ({
+                        name: project.name,
+                        htmlUrl: project.html_url,
+                        language: project.language
+                      }));
                     setData({
                       ...data,
-                      projects: projectNames,
+                      projects: projects,
                     });
                   })
                   .catch((error) => {
@@ -60,7 +69,7 @@ import {Link} from "react-router-dom";
                 return data.projects;
             }
             let filteredProjects = data.projects.filter((project) => {
-                return project.includes(data.userInput);
+                return project.name.includes(data.userInput);
             });
             return filteredProjects;
           }
@@ -81,13 +90,21 @@ import {Link} from "react-router-dom";
                             </ul>
                     </div>
                          <br></br>
+                        
+
+    
                     <label>Search Projects: </label>
                             <input type="text" onChange={handleOnChange}></input>
-                            <ul>
+                            <Box sx={{ minWidth: 500  }}>
                                 {getFilteredProjects().map((project, index) => {
-                                     return <li key={index}><Link to={project}>{project}</Link></li>;
+                                    console.log(project);
+                                     return <Card variant="outlined" sx={{ width: 200, height: 100, display: 'inline-block', backgroundColor: "#ffd7db", margin: 5 }} key={index}><a href={project.htmlUrl} target="_blank">{project.name}</a>
+                                              <CardContent>language: {project.language}</CardContent>
+                                           </Card>;
                                 })}
-                            </ul>
+
+                            </Box>
+                           
                 </div>
             )
         }
