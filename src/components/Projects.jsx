@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ListItem from "./ListItem";
+import {Link} from "react-router-dom";
 
     const initialProjects = [
         "babyessentials",
@@ -26,7 +27,7 @@ import ListItem from "./ListItem";
                     return result.json();
                   })
                   .then((data) => {
-                    const projectNames = data.results.map((project) => project.name);
+                    const projectNames = data.map((project) => project.name);
                     setData({
                       ...data,
                       projects: projectNames,
@@ -83,8 +84,8 @@ import ListItem from "./ListItem";
                     <label>Search Projects: </label>
                             <input type="text" onChange={handleOnChange}></input>
                             <ul>
-                                {getFilteredProjects.map((project, index) => {
-                                    return <li key={index}>{project}</li>;
+                                {getFilteredProjects().map((project, index) => {
+                                     return <li key={index}><Link to={project}>{project}</Link></li>;
                                 })}
                             </ul>
                 </div>
