@@ -23,7 +23,7 @@ const Education = () => {
       date: "2010-2011",
       major: "International Management, First Class Honours",
       title:
-      "Thesis Title: Internationalization Process of New Zealand’s Software Born-Global Companies",
+        "Thesis Title: Internationalization Process of New Zealand’s Software Born-Global Companies",
       description:
         "The thesis focuses on how New Zealand’s software firms engage in overseas export activities, and what exporting strategies they use to be successful. The study develops a theoretical model of New Zealand’s software born-global companies’ internationalization process. The model makes contributions to the theoretical concepts – born-global, psychic distance, and global mindset and also recommendations to New Zealand’s government policies.",
     },
@@ -38,7 +38,7 @@ const Education = () => {
     <section id="education">
       <div>
         <h2>Education 🎓</h2>
-        
+
         {edu.map(({ heading, date, major, title, description }, id) => (
           <Card
             key={id}

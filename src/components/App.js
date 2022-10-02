@@ -15,7 +15,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import NotFound from "./NotFound";
 import ThankYouPage from "./ThankYouPage";
-
+// import picture2Src from '../picture2.jpg';
 
 const sections = [
   {
@@ -46,7 +46,10 @@ const sections = [
   
   function MainPage() {
     return (
-      <div className="App">
+      <div className="App" style={{ 
+        // backgroundImage: `url(${picture2Src})`
+        backgroundColor: "#F2F3F4"
+      }}>
         <Container maxWidth='lg'>
             <NavBar title="Dr. Ana Mingyang Wang's Portfolio" sections={sections}></NavBar>
         </Container>
