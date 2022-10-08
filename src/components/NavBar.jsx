@@ -3,11 +3,14 @@ import Toolbar from "@mui/material/Toolbar";
 import { Typography } from "@mui/material";
 // import Link from '@mui/material/Link';
 import { Link } from "react-router-dom";
+import Grid from '@mui/material/Grid';
 
 function NavBar(props) {
   const { title, sections } = props;
   return (
+   
     <>
+     
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Typography
           component="h2"
@@ -25,8 +28,9 @@ function NavBar(props) {
         variant="dense"
         sx={{ justifyContent: "space-between", overflowX: "auto" }}
       >
+       <Grid container columnSpacing={{ xs: 3, sm: 4, md: 5 }} justifyContent="center" alignItems="center">
         {sections.map((section) => (
-          <Link key={section.title} to={section.url}>{section.title}</Link>
+          <Grid item><Link key={section.title} to={section.url}>{section.title}</Link></Grid> 
            // <Link 
             // href={section.url}
             // color="inherit"
@@ -38,8 +42,11 @@ function NavBar(props) {
             //     {section.title}
             // </Link>
         ))}
+       </Grid>
       </Toolbar>
+      
     </>
+    
   );
 }
 

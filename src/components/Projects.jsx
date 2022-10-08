@@ -4,7 +4,7 @@ import ListItem from "./ListItem";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-
+import "./Projects.css";
 // const initialProjects = [
 //     "babyessentials",
 //     "ruby-flowershop-app",
@@ -122,17 +122,25 @@ const Projects = () => {
             <Card
               variant="outlined"
               sx={{
-                width: 200,
-                height: 100,
+                width: 300,
+                height: 200,
                 display: "inline-block",
                 backgroundColor: "#EBDEF0",
                 margin: 5,
               }}
               key={index}
             >
+              <div className="element">
+                <img
+                  src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                  height="100"
+                  width="100"
+                />
+              </div>
               <a href={project.htmlUrl} target="_blank">
                 {project.name}
               </a>
+
               <CardContent>language: {project.language}</CardContent>
             </Card>
           );
