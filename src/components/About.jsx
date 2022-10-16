@@ -35,7 +35,7 @@ const About = () => (
     </div>
     <Button variant="contained" color="secondary">
       <Link
-        href="https://drive.google.com/file/d/1dlJwrbKtA_NK3VT-b3dYJl-Mn1Hqd_H5/view?usp=sharing"
+        href="https://drive.google.com/file/d/11H05fn99b0u6wJQLzIDkPjtCawYQgvy6/view?usp=sharing"
         color="#FFFFFF"
       >
         DOWNLOAD MY RESUME
