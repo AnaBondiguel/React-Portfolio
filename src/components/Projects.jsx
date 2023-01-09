@@ -104,10 +104,23 @@ const Projects = () => {
           ></ListItem>
           <a href="https://github.com/AnaBondiguel/React-Portfolio.git">
             My React Portfolio Github
-          </a>{" "}
+          </a>
           <br></br>
           <a href="https://github.com/AnaBondiguel/My-Portfolio.git">
             My HTML/CSS Portfolio Github
+          </a>
+          <ListItem
+            title="Full-Stack Application"
+            description={
+              " building a project prioritisation application for the Teams and Subscriptions Marketing of Canva "
+            }
+          ></ListItem>
+          <a href="https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git">
+            Frontend of Project Prioritisation Github
+            <br></br>
+          </a>
+          <a href="https://github.com/OrangeKami/Project_Prioritization_Server.git">
+            Backend of Project Prioritisation Github
           </a>
         </ul>
       </div>
