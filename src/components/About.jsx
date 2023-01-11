@@ -35,10 +35,10 @@ const About = () => (
     </div>
     <Button variant="contained" color="secondary">
       <Link
-        href="https://drive.google.com/file/d/1vZXiN4AUJjNYSDQmDeTaWGD0dNzGjtrs/view?usp=share_link"
+        href="https://drive.google.com/file/d/1Xe_iaOeZ-b65n-6JNUVL48DLy9RnJYyW/view?usp=share_link"
         color="#FFFFFF"
       >
-        DOWNLOAD MY RESUME
+        DOWNLOAD MY CV
       </Link>
     </Button>
   </section>
